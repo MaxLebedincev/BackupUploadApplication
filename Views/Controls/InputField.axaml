@@ -1,0 +1,14 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:BackupUploadApplication.ViewModels.Controls"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:model="using:BackupUploadApplication.Models.Controls"
+			 x:DataType="model:Field"
+			 x:Class="BackupUploadApplication.Views.Controls.InputField">
+	<StackPanel Orientation="Horizontal">
+		<Label Width="100" FontSize="16" Margin="0 5">{Binding Title, StringFormat={}{0}}:</Label>
+		<TextBox Width="200" Height="32" Name="{Binding Name}" CornerRadius="2" Text=""/>
+	</StackPanel>
+</UserControl>

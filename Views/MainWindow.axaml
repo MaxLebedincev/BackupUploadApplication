@@ -1,0 +1,73 @@
+<Window 
+	xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vm="using:BackupUploadApplication.ViewModels"
+    xmlns:v="using:BackupUploadApplication.Views.Controls"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:i="https://github.com/projektanker/icons.avalonia"
+    mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="550" Height="550" Width="500"
+    x:Class="BackupUploadApplication.Views.MainWindow"
+    x:DataType="vm:MainWindowViewModel"
+    Icon="/Assets/avalonia-logo.ico"
+    Title="BackupUploadApplication"
+>
+	<Design.DataContext>
+		<vm:MainWindowViewModel/>
+	</Design.DataContext>
+	<DockPanel>
+		<TabControl Margin="16" TabStripPlacement="Top" HorizontalAlignment="Left">
+			<TabItem Header="Действия">
+				<StackPanel Orientation="Vertical" Spacing="10" Margin="30 40">
+					<StackPanel Orientation="Horizontal">
+						<Button CornerRadius="2" Width="185">
+							<Button.Styles>
+								<Style Selector="Button">
+									<Setter Property="BorderBrush" Value="#5C5C5C" />
+									<Setter Property="BorderThickness" Value="1" />
+									<Setter Property="Background" Value="#3CABFF" />
+								</Style>
+								<Style Selector="Button:pointerover/template/ContentPresenter">
+									<Setter Property="BorderBrush" Value="#5C5C5C" />
+									<Setter Property="BorderThickness" Value="1" />
+									<Setter Property="Background" Value="#70C2FF" />
+								</Style>
+							</Button.Styles>
+							<ToolTip.Tip>
+								<TextBlock>Выберите папку для выгрузки бэкапа</TextBlock>
+							</ToolTip.Tip>
+							<StackPanel Orientation="Horizontal">
+								<TextBlock FontSize="16" Margin="5 0">Выгрузить бэкап</TextBlock>
+								<i:Icon Value="mdi-download" FontSize="22" />
+							</StackPanel>
+						</Button>
+						<Border Width="185" Margin="5" Padding="4" CornerRadius="12" BorderThickness="1" BorderBrush="Black">
+							<TextBlock  FontSize="14" Margin="5 0"></TextBlock>
+						</Border>
+					</StackPanel>
+					<v:InputField />
+				</StackPanel>
+			</TabItem>
+			<TabItem Header="Доступы">
+				<StackPanel Orientation="Vertical" Spacing="10" Margin="30 40">					
+					<StackPanel Orientation="Horizontal">
+						<Label Width="100" FontSize="16" Margin="0 5">Host:</Label>
+						<TextBox Width="200" Height="32" Name="host" CornerRadius="2" Text=""/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal" Width="300">
+						<Label Width="100" FontSize="16" Margin="0 5">Port:</Label>
+						<TextBox Width="200" Height="32" Name="port" CornerRadius="2" Text=""/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Label Width="100" FontSize="16" Margin="0 5">Никнейм:</Label>
+						<TextBox Width="200" Height="32" Name="username" CornerRadius="2" Text=""/>
+					</StackPanel>
+					<StackPanel Orientation="Horizontal">
+						<Label Width="100" FontSize="16" Margin="0 5">Пароль:</Label>
+						<TextBox Name="password" Width="200" Height="32" CornerRadius="2" Text=""/>
+					</StackPanel>
+				</StackPanel>
+			</TabItem>
+		</TabControl>
+	</DockPanel>
+</Window>

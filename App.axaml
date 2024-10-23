@@ -1,0 +1,21 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="BackupUploadApplication.App"
+             xmlns:local="using:BackupUploadApplication"
+			 RequestedThemeVariant="Light"
+			 >
+             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+
+    <Application.DataTemplates>
+        <local:ViewLocator/>
+    </Application.DataTemplates>
+  
+    <Application.Styles>
+        <FluentTheme>
+			<FluentTheme.Palettes>
+				<!-- Palette for Light theme variant -->
+				<ColorPaletteResources x:Key="Light" Accent="#3CABFF" RegionColor="White" ErrorText="Red" />
+			</FluentTheme.Palettes>
+		</FluentTheme>
+    </Application.Styles>
+</Application>
